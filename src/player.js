@@ -7,9 +7,10 @@ Mad.Player = function(url, callback) {
 };
 
 Mad.Player.prototype._init = function() {
-    this.mp3 = new Mad.MP3File(this.stream);
-    this.id3 = this.mp3.getID3v2Stream();
-    this.mpeg = this.mp3.getMpegStream();
+    // this.mp3 = new Mad.MP3File(this.stream);
+    // this.id3 = this.mp3.getID3v2Stream();
+    // this.mpeg = this.mp3.getMpegStream();
+    this.mpeg = new Mad.Stream(new Mad.SubStream(this.stream,0));
     this.synth = new Mad.Synth();
     this.frame = new Mad.Frame();
     this.frame = Mad.Frame.decode(this.frame, this.mpeg);

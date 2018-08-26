@@ -8,7 +8,7 @@ Mad.AjaxStream = function(url, callback) {
         self.updateBuffer();
         callback(self);
     }
-    this.state.request.setRequestHeader("Range", 'bytes=0-');
+    this.state.request.setRequestHeader("Range", 'bytes=139246-');
     this.state.request.send();
 }
 
