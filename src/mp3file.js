@@ -43,8 +43,6 @@ Mad.MP3File.prototype.getMpegStream = function() {
     } else {
         var offset = 0;
     }
-    
-    var length = this.stream.length - offset;
-    
-    return new Mad.Stream(new Mad.SubStream(this.stream, offset), length);
+        
+    return new Mad.Stream(new Mad.SubStream(this.stream, offset));
 }
